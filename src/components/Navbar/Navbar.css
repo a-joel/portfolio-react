@@ -1,0 +1,44 @@
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: var(--nav-bg);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.name {
+        text-decoration: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: inherit;
+  font-size: 1rem;
+  transition: color 0.2s;
+}
+.nav-links a:hover {
+  color: #3274cf;
+}
+
+/* Mobile Menu */
+.mobile-menu {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+  .mobile-menu {
+    display: block;
+  }
+}
