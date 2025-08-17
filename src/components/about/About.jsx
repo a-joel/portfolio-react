@@ -3,7 +3,7 @@ import resume from "../../assets/joelresume.pdf";
 import joelPhoto from "../../assets/linkedinprofile.jpg";
 export default function About() {
   return (
-    <div className="about-container">
+    <div className="about-container" id="about">
       {/* Profile Image */}
       <div className="about-photo">
         <img src={joelPhoto} alt="My Profile" />
@@ -13,7 +13,7 @@ export default function About() {
       <div className="about-content">
         <h1 className="about-title">About Me</h1>
         <p className="about-text">
-          Hi, I’m <strong>Your Name</strong>, a passionate Full Stack Developer
+          Hi, I’m <strong>Joel</strong>, a passionate Full Stack Developer
           focused on creating elegant, efficient, and user-friendly applications.
           <br /><br />
           I specialize in JavaScript (React, Node.js), REST APIs, and cloud deployment.

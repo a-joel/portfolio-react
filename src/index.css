@@ -12,16 +12,10 @@ body {
   transition: background 0.3s ease, color 0.3s ease;
 }
 
-/* Light Theme */
-:root {
-  --bg: #ffffff;
-  --text: #111111;
-  --nav-bg: #f8f8f8;
+html {
+  scroll-behavior: smooth;
 }
 
-/* Dark Theme */
-.dark {
-  --bg: #121212;
-  --text: #f0f0f0;
-  --nav-bg: #1e1e1e;
+::-webkit-scrollbar-thumb{
+  width: 2px;
 }

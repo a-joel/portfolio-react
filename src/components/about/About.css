@@ -44,6 +44,7 @@
   border-radius: 5px;
   font-weight: bold;
   transition: background 0.3s ease;
+  animation: fadeInUp 1s ease forwards;
 }
 .btn-primary:hover {
   background: #b20710;

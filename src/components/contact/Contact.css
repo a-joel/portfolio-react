@@ -5,8 +5,9 @@
 
 .contact-title {
   font-size: 2.5rem;
-  margin-bottom: 0.5rem;
+  margin: 0.9rem 0;
   animation: fadeInDown 1s ease-in-out;
+  text-align: center;
 }
 
 .contact-subtitle {
@@ -27,11 +28,17 @@
 }
 .contact-form input,
 .contact-form textarea {
-  padding: 0.8rem;
+  padding: 0.9rem;
   border: 1px solid #ddd;
-  border-radius: 5px;
   font-size: 1rem;
   transition: border 0.3s;
+  background: #000;
+  color: white;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder{
+  color: #ddd;
 }
 .contact-form input:focus,
 .contact-form textarea:focus {
@@ -56,6 +63,25 @@
   color: #e50914;
 }
 
+
+.submit-btn{
+  background: rgb(45, 101, 221);
+  padding: 16px 0;
+  color: white;
+  border: none;
+  font-size: 16px;
+  transition: background 0.3s ease-in-out;
+}
+
+.submit-btn:hover{
+  cursor: pointer;
+  background: rgb(43, 216, 43);
+}
+
+.name-error,
+.email-error{
+  display: none;
+}
 /* Animations reused */
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(30px); }

@@ -80,6 +80,23 @@
   color: gray;
 }
 
+
+.view-project-btn {
+  background-color: rgb(43, 216, 43);
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  width: 300px;
+  margin: 40px 0;
+  transition: transform 0.3s ease-in-out;
+}
+
+.view-project-btn:hover {
+  cursor: pointer;
+  transform: translateY(-5px);
+  box-shadow: 0 0 3px rgb(43, 216, 43);
+}
 /* Animations */
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(30px); }

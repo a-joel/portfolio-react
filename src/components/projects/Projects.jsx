@@ -2,6 +2,7 @@ import "./Projects.css";
 import eliteShopping from "../../assets/elite-shopping.png";
 import netflixClone from "../../assets/netflix.png";
 import eliteDashboard from "../../assets/elite-dashboard.png";
+import {Link} from 'react-router-dom'
 const projects = [
   {
     title: "Netflix Clone",
@@ -50,6 +51,8 @@ export default function Projects() {
           </a>
         ))}
       </div>
+      <Link to={'/projects'}><button className="view-project-btn">View</button></Link>
+      <hr />
     </div>
   );
 }

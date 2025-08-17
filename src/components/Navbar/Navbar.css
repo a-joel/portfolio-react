@@ -1,44 +1,125 @@
-/* Navbar */
-.navbar {
+.nav-container{
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  padding: 1rem 2rem;
-  background: var(--nav-bg);
-  position: sticky;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 10;
+  position: fixed;
+  margin: 20px auto;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(240, 240, 240, 0.8));
+  width: 500px;
+  padding: 8px;
+  border-radius: 20px;
+  transition: box-shadow 0.3s ease-in-out;
+  animation: fadeInDown 1s forwards;
 }
 
-.nav-links {
+.nav-items {
   display: flex;
-  gap: 2rem;
+  gap: 90px;
+  justify-content: center;
+  position: relative;
 }
 
-.name {
-        text-decoration: none;
+.nav-link {
+  transition: transform 0.3s ease-in-out;
+}
+.nav-link:hover {
+  transform: translateY(-5px);
 }
 
-.nav-links a {
-  text-decoration: none;
-  color: inherit;
-  font-size: 1rem;
-  transition: color 0.2s;
-}
-.nav-links a:hover {
-  color: #3274cf;
+.home::after {
+  content: "HOME";
+  font-size: 10px;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  visibility: hidden;
+  opacity: 0;
+  transition:  opacity 0.3s ease-in-out;
 }
 
-/* Mobile Menu */
-.mobile-menu {
-  display: none;
+.home:hover::after{
+  visibility: visible;
+  opacity: 1;
 }
 
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
+.about::after {
+  content: "ABOUT";
+  font-size: 10px;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  visibility: hidden;
+  opacity: 0;
+  transition:  opacity 0.3s ease-in-out;
+}
+
+.about:hover::after{
+  visibility: visible;
+  opacity: 1;
+}
+
+.projects::after {
+  content: "PROJECTS";
+  font-size: 10px;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  visibility: hidden;
+  opacity: 0;
+  transition:  opacity 0.3s ease-in-out;
+}
+
+.projects:hover::after{
+  visibility: visible;
+  opacity: 1;
+}
+
+.contact::after {
+  content: "CONTACT";
+  font-size: 10px;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  visibility: hidden;
+  opacity: 0;
+  transition:  opacity 0.3s ease-in-out;
+}
+
+.contact:hover::after{
+  visibility: visible;
+  opacity: 1;
+}
+
+.nav-container:hover {
+  box-shadow: 0 0 5px rgb(228, 220, 220);
+}
+
+@media (max-width: 428px) {
+  .nav-container {
+    width: 290px;
   }
-  .mobile-menu {
-    display: block;
+
+  .nav-items {
+    gap: 50px;
   }
 }
