@@ -2,13 +2,14 @@ import "./Projects.css";
 import eliteShopping from "../../assets/elite-shopping.png";
 import netflixClone from "../../assets/netflix.png";
 import eliteDashboard from "../../assets/elite-dashboard.png";
+import hospitalManagement from "../../assets/heal-zone-linkedin-preview.png";
 import {Link} from 'react-router-dom'
 const projects = [
   {
     title: "Netflix Clone",
     desc: "A Netflix-inspired streaming app built with React & Firebase.",
     image: netflixClone,
-    link: "https://a-joel.github.io/netflix-clone/",
+    link: "https://cloned-of-netfli.netlify.app/",
   },
   {
     title: "E-Commerce Store",
@@ -21,6 +22,12 @@ const projects = [
     desc: "Minimal, responsive, and API Integrated user dashboard",
     image: eliteDashboard,
     link: "https://a-joel.github.io/elite-shopping-dashboard/",
+  },
+  {
+    title: "Hospital Management System",
+    desc: "Minimal, responsive, and API Integrated user dashboard and admin panel",
+    image: hospitalManagement,
+    link: "https://healing-zone-hospitals.netlify.app/",
   },
 ];
 

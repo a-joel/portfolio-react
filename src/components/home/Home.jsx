@@ -5,14 +5,7 @@ export default function Home() {
   return (
     <div className="home-container">
       {/* Background Video or Image */}
-      <video
-        className="home-bg"
-        autoPlay
-        loop
-        muted
-        playsInline
-        src="/assets/netflix-preview.mp4"
-      />
+      
       <div className="overlay" />
 
       {/* Intro Section */}
