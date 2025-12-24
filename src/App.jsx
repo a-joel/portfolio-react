@@ -5,7 +5,7 @@ import ThemeToggle from './components/ThemeToggle.jsx'
 import Home from './components/home/Home.jsx'
 import About from './components/about/About.jsx'
 import Projects from './components/projects/Projects.jsx'
-import Contact from './components/contact/Contact.jsx'
+import Contact from './components/contact/ContactForm.jsx'
 function App() {
   return (
     <div>

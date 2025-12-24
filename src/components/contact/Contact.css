@@ -32,18 +32,19 @@
   border: 1px solid #ddd;
   font-size: 1rem;
   transition: border 0.3s;
-  background: #000;
-  color: white;
+  background: #f6f4f4;
+  color: rgb(0, 0, 0);
 }
 
 .contact-form input::placeholder,
 .contact-form textarea::placeholder{
-  color: #ddd;
+  color: #000000;
 }
 .contact-form input:focus,
 .contact-form textarea:focus {
   border: 1px solid #e50914;
   outline: none;
+  box-shadow: 0 0 5px rgba(229, 9, 20, 0.5);
 }
 
 /* Socials */
