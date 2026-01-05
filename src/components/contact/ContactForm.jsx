@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import "./Contact.css";
 import { Mail, Github, Linkedin, X } from "lucide-react";
+import { FaGithub, FaWhatsapp } from 'react-icons/fa';
 
 export default function Contact() {
   const [name, setName] = useState('');
@@ -68,7 +69,8 @@ export default function Contact() {
   return (
     <div>
       <div className="contact-container" id="contact">
-        <h1 className="contact-title">Get in Touch</h1>
+       <div>
+         <h1 className="contact-title">Get in Touch</h1>
         <p className="contact-subtitle">
           Whether you have a project idea, job opportunity, or just want to say hi — let's talk.
         </p>
@@ -125,6 +127,8 @@ export default function Contact() {
     {isSubmitting ? 'Sending...' : 'Send Message'}
   </button>
 </form>
+       </div>
+       <div class="vertical-line"></div>
 
         {/* Social Links (unchanged) */}
         <div className="icons-container">

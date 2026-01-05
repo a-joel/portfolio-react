@@ -80,7 +80,7 @@ export default function Projects() {
           </a>
         ))}
       </div>
-      <Link to={'/projects'}><button className="view-project-btn">View</button></Link>
+      <Link to={'/'}><button className="view-project-btn">Home</button></Link>
       <hr />
     </div>
   );

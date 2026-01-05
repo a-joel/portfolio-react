@@ -7,10 +7,29 @@ function Navbar() {
     <div>
       <div className="nav-container">
         <div className="nav-items">
-          <div className="nav-link home"><NavLink to={'/'}> <HomeIcon/> </NavLink></div>
-          <div className="nav-link about"><NavLink to="#about"> <FileUser /> </NavLink></div>
-          <div className="nav-link projects"><NavLink to={'/projects'}> <NotebookPen /> </NavLink></div>
-          <div className="nav-link contact"><NavLink> <Contact /> </NavLink></div>
+          <div className="nav-link home">
+            <NavLink to={'/'}>
+              <HomeIcon />
+            </NavLink>
+          </div>
+
+          <div className="nav-link about">
+            <NavLink to="/">
+              <FileUser />
+                </NavLink>
+          </div>
+
+          <div className="nav-link projects">
+            <NavLink to={'/projects'}>
+              <NotebookPen />
+            </NavLink>
+          </div>
+
+          <div className="nav-link contact">
+            <NavLink to={'#contact'}>
+              <Contact />
+            </NavLink>
+          </div>
         </div>
       </div>
     </div>

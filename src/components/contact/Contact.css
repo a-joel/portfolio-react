@@ -1,6 +1,21 @@
+.footer-divide-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
 .contact-container {
   padding: 4rem 2rem;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.vertical-line {
+  border-left: 2px solid black;
+  height: 100px;
+  margin: 0 20px;
 }
 
 .contact-title {
@@ -91,7 +106,7 @@
 .card {
   width: fit-content;
   height: fit-content;
-  background-color: rgb(238, 238, 238);
+  background-color: rgb(255, 255, 255);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -104,7 +119,8 @@
 .socialContainer {
   width: 52px;
   height: 52px;
-  background-color: rgb(44, 44, 44);
+  background: #000;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
