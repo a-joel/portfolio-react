@@ -1,137 +1,159 @@
 // src/components/Contact.jsx
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import "./Contact.css";
-import { Mail, Github, Linkedin, X } from "lucide-react";
-import { FaGithub, FaWhatsapp } from 'react-icons/fa';
+import { motion } from "framer-motion";
+import axios from "axios";
 
 export default function Contact() {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
-  const [nameError, setNameError] = useState('');
-  const [emailError, setEmailError] = useState('');
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  const [nameError, setNameError] = useState("");
+  const [emailError, setEmailError] = useState("");
+
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSent, setIsSent] = useState(false);
 
   const handleSubmit = async (e) => {
-  e.preventDefault();
-  let hasError = false;
+    e.preventDefault();
+    let hasError = false;
 
-  // Reset errors
-  setNameError('');
-  setEmailError('');
+    // Reset errors
+    setNameError("");
+    setEmailError("");
 
-  // Validate
-  if (!name.trim()) {
-    setNameError('Please enter your name');
-    hasError = true;
-  }
-  if (!email.trim()) {
-    setEmailError('Please enter your email');
-    hasError = true;
-  } else if (!/^\S+@\S+\.\S+$/.test(email)) {
-    setEmailError('Please enter a valid email');
-    hasError = true;
-  }
+    // Validation
+    if (!name.trim()) {
+      setNameError("Please enter your name");
+      hasError = true;
+    }
 
-  if (hasError) return;
+    if (!email.trim()) {
+      setEmailError("Please enter your email");
+      hasError = true;
+    } else if (!/^\S+@\S+\.\S+$/.test(email)) {
+      setEmailError("Please enter a valid email");
+      hasError = true;
+    }
 
-  // 👇 NETLIFY SUBMISSION LOGIC
-  const formData = new FormData();
-  formData.append('name', name);
-  formData.append('email', email);
-  formData.append('message', message);
+    if (hasError) return;
 
-  try {
-    setIsSubmitting(true);
-    await fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams({
-        'form-name': 'contact',
+    try {
+      setIsSubmitting(true);
+
+      // 👉 SEND TO NODEMAILER BACKEND
+      await axios.post(import.meta.env.VITE_API_BASE_URL, {
         name,
         email,
-        message
-      }).toString()
-    });
-    
-    // Success! Reset form and show message
-    alert('Message sent successfully!');
-    setName('');
-    setEmail('');
-    setMessage('');
-  } catch (error) {
-    alert('Failed to send message. Please try again.');
-  } finally {
-    setIsSubmitting(false);
+        message,
+      });
+
+      // Success
+      setIsSent(true);
+      setName("");
+      setEmail("");
+      setMessage("");
+    } catch (error) {
+      alert("Failed to send message. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  console.log();
+
+
+  if (isSent) {
+    return (
+      <motion.div
+        className="success-wrapper"
+        initial={{ opacity: 0, scale: 0.95, y: 20 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+      >
+        <motion.div
+          className="success-icon"
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          transition={{ delay: 0.3, type: "spring", stiffness: 200 }}
+        >
+          ✓
+        </motion.div>
+
+        <h2 className="success-title">Message Sent Successfully</h2>
+        <p className="success-text">
+          Thank you for reaching out. Your message has been delivered to{" "}
+          <strong className="joel-name">Joel. A</strong> and you’ll hear back soon.
+        </p>
+
+        <motion.button
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          className="resend-btn"
+          onClick={() => setIsSent(false)}
+        >
+          Send Another Message
+        </motion.button>
+      </motion.div>
+    );
   }
-};
 
   return (
-    <div>
-      <div className="contact-container" id="contact">
-       <div>
-         <h1 className="contact-title">Get in Touch</h1>
+    <div className="contact-container" id="contact">
+      <div>
+        <h1 className="contact-title">Get in Touch</h1>
         <p className="contact-subtitle">
           Whether you have a project idea, job opportunity, or just want to say hi — let's talk.
         </p>
 
         {/* Contact Form */}
-        <form 
-  className="contact-form" 
-  onSubmit={handleSubmit}
-  name="contact" 
-  method="POST" 
-  data-netlify="true"
-  data-netlify-honeypot="bot-field"
->
-  {/* Hidden honeypot field (anti-spam) */}
-  <input type="hidden" name="form-name" value="contact" />
-  <input type="hidden" name="bot-field" />
-  
-  {/* Your existing inputs */}
-  <input
-    id="name"
-    type="text"
-    name="name"
-    placeholder="Your Name"
-    value={name}
-    onChange={(e) => setName(e.target.value)}
-    required
-  />
-  {nameError && <p className="name-error">{nameError}</p>}
+        <form className="contact-form" onSubmit={handleSubmit}>
+          <input
+            id="name"
+            type="text"
+            placeholder="Your Name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+          {nameError && <p className="name-error">{nameError}</p>}
 
-  <input
-    id="email"
-    type="email"
-    name="email"
-    placeholder="Your Email"
-    value={email}
-    onChange={(e) => setEmail(e.target.value)}
-    required
-  />
-  {emailError && <p className="email-error">{emailError}</p>}
+          <input
+            id="email"
+            type="email"
+            placeholder="Your Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          {emailError && <p className="email-error">{emailError}</p>}
 
-  <textarea
-    name="message"
-    rows="5"
-    placeholder="Your Message"
-    value={message}
-    onChange={(e) => setMessage(e.target.value)}
-    required
-  />
-  <button 
-    type="submit" 
-    className="submit-btn"
-    disabled={isSubmitting}
-  >
-    {isSubmitting ? 'Sending...' : 'Send Message'}
-  </button>
-</form>
-       </div>
-       <div class="vertical-line"></div>
+          <textarea
+            rows="5"
+            placeholder="Your Message"
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+          />
+
+          <button type="submit" className="submit-btn" disabled={isSubmitting}>
+            {isSubmitting ? "Sending..." : "Send Message"}
+          </button>
+        </form>
+      </div>
+
+      <div className="vertical-line"></div>
 
         {/* Social Links (unchanged) */}
-        <div className="icons-container">
+        <motion.div
+        initial={{opacity: 0, y: 50}}
+        animate= {{opacity: 1, y: 0}}
+        transition={{duration: 0.8, ease: 'easeOut'}}
+        viewport={{once: true}}
+        >
+            <h1 className="contact-title">Follow my profiles</h1>
+            <p className="contact-subtitle">
+          Whether you have a project idea, job opportunity, or just want to <br /> say hi — let's talk.
+        </p>
+          <div className="icons-container">
           <div className="card">
             <a href="mailto:joelvijay319@gmail.com" className="socialContainer containerTwo">
               <svg className="socialSvg mailSvg" viewBox="0 0 16 16">
@@ -158,7 +180,7 @@ export default function Contact() {
             </a>
           </div>
         </div>
-      </div>
+        </motion.div>
     </div>
   );
 }

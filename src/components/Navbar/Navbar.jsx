@@ -1,6 +1,6 @@
 import React from 'react'
 import './Navbar.css'
-import { NavLink } from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
 import { HomeIcon, Contact, NotebookPen, FileUser } from 'lucide-react'
 function Navbar() {
   return (
@@ -8,9 +8,9 @@ function Navbar() {
       <div className="nav-container">
         <div className="nav-items">
           <div className="nav-link home">
-            <NavLink to={'/'}>
+            <Link to={'/'}>
               <HomeIcon />
-            </NavLink>
+            </Link>
           </div>
 
           <div className="nav-link about">

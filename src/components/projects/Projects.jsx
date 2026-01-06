@@ -7,6 +7,7 @@ import landingPage from '../../assets/landing-page-internships.png'
 import todoList from '../../assets/to-do-list.png'
 import flightDeck from '../../assets/flight-deck-360.png'
 import {Link} from 'react-router-dom'
+import {motion} from 'framer-motion';
 
 const projects = [
   {
@@ -80,8 +81,19 @@ export default function Projects() {
           </a>
         ))}
       </div>
-      <Link to={'/'}><button className="view-project-btn">Home</button></Link>
-      <hr />
+      <Link to="/">
+  <motion.button
+    initial={{ opacity: 0, y: 30 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.8, ease: "easeOut" }}
+    viewport={{ once: true, amount: 0.3 }}
+    whileHover={{ scale: 1.05 }}
+    whileTap={{ scale: 0.95 }}
+    className="view-project-btn"
+  >
+    Home
+  </motion.button>
+</Link>
     </div>
   );
 }

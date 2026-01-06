@@ -20,3 +20,7 @@ html {
 ::-webkit-scrollbar-thumb{
   width: 2px;
 }
+
+.joel-name {
+  color: red;
+}

@@ -1,0 +1,128 @@
+/* ===== Section ===== */
+.cert-section {
+  background: #ffffff;
+  padding: 4rem 1.5rem;
+}
+
+.cert-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ===== Header ===== */
+.cert-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 3rem;
+}
+
+.cert-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #111;
+}
+
+/* ===== Grid ===== */
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+/* ===== Card ===== */
+.cert-card {
+  position: relative;
+  background: #fff;
+  border-radius: 14px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.cert-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* ===== Spotlight ===== */
+.cert-spotlight {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  border-radius: 14px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* ===== Content ===== */
+.cert-content {
+  position: relative;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.cert-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #eef2ff;
+  color: #4f46e5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cert-card h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #111;
+}
+
+.cert-issuer {
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+/* ===== Skills ===== */
+.cert-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.cert-skill {
+  background: #f3f4f6;
+  padding: 0.35rem 0.6rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+/* ===== Footer ===== */
+.cert-footer {
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid #e5e7eb;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+.cert-link {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-weight: 600;
+  color: #4f46e5;
+  text-decoration: none;
+}
+
+.cert-link:hover {
+  color: #3730a3;
+}
