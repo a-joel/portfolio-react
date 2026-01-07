@@ -3,6 +3,18 @@ import './Navbar.css'
 import { NavLink, Link } from 'react-router-dom'
 import { HomeIcon, Contact, NotebookPen, FileUser } from 'lucide-react'
 function Navbar() {
+
+  const handleScroll = () => {
+    const contactSection = document.getElementById('contact');
+    const aboutSection = document.getElementById('about');
+
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+    if (aboutSection) {
+      aboutSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
   return (
     <div>
       <div className="nav-container">
@@ -14,7 +26,7 @@ function Navbar() {
           </div>
 
           <div className="nav-link about">
-            <NavLink to="/">
+            <NavLink onClick={()=> handleScroll()}>
               <FileUser />
                 </NavLink>
           </div>
@@ -26,7 +38,7 @@ function Navbar() {
           </div>
 
           <div className="nav-link contact">
-            <NavLink to={'#contact'}>
+            <NavLink onClick={()=> handleScroll()}>
               <Contact />
             </NavLink>
           </div>

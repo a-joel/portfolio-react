@@ -1,20 +1,66 @@
-.nav-container{
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.nav-container {
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 10;
-  position: fixed;
+
   margin: 20px auto;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(240, 240, 240, 0.8));
-  width: 500px;
+  width: 700px;
+  height: 49px;
   padding: 8px;
-  border-radius: 20px;
-  transition: box-shadow 0.3s ease-in-out;
-  animation: fadeInDown 1s forwards;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* 🍏 Liquid glass background */
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.45),
+      rgba(255, 255, 255, 0.18)
+    );
+
+  backdrop-filter: blur(22px) saturate(180%);
+  -webkit-backdrop-filter: blur(22px) saturate(180%);
+
+  border-radius: 22px;
+
+  /* Glass edge + depth */
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.12),
+    inset 0 1px 1px rgba(255, 255, 255, 0.65);
+
+  transition:
+    box-shadow 0.3s ease,
+    background 0.3s ease,
+    transform 0.3s ease;
+
+  animation: fadeInDown 0.9s ease forwards;
 }
+
+.nav-container:hover {
+  box-shadow:
+    0 18px 40px rgba(0, 0, 0, 0.18),
+    inset 0 1px 1px rgba(255, 255, 255, 0.75);
+  transform: translateY(-1px);
+}
+
+.nav-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,0.7),
+    rgba(255,255,255,0)
+  );
+  pointer-events: none;
+}
+
 
 .nav-items {
   display: flex;

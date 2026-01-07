@@ -5,9 +5,8 @@
   justify-content: center;
   min-height: 100vh;
   padding: 0 10%;
-  background-color: #1a1a1a; /* Dark theme base */
-  color: white;
-  gap: 4rem; /* Space between text and image */
+  background-color: #ffffff;
+  gap: 4rem; 
   position: relative;
   width: 100%;
 }
@@ -32,14 +31,14 @@
 .about-title {
   font-size: 1.5rem;
   margin-bottom: 1rem;
-  color: #ccc;
+  color: #000000;
 }
 
 .about-text {
   font-size: 1.1rem;
   line-height: 1.6;
   margin-bottom: 2rem;
-  color: #e0e0e0;
+  color: #000000;
 }
 
 /* Button Styling */
@@ -91,13 +90,17 @@
 
 
 
-@media (max-width: 768px) {
+@media (max-width: 428px) {
   .home-container {
     flex-direction: column-reverse; /* Brings image to top on mobile */
     text-align: center;
     padding: 4rem 2rem;
     gap: 2rem;
     height: auto;
+  }
+
+  .title-wrapper {
+    padding: 0 1rem 0 1rem;
   }
 
   .home-content {
@@ -112,4 +115,108 @@
     width: 250px;
     height: 250px;
   }
+}
+
+.title-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+  list-style: none;
+}
+
+.title-text {
+  font-weight: 800;
+  color: #d7d7d7;
+  cursor: pointer;
+  letter-spacing: 0.08em;
+  transition: color 0.3s ease, transform 0.3s ease;
+  
+  /* Mobile first */
+  font-size: 1.40rem;
+}
+
+/* Tablet */
+@media (min-width: 640px) {
+  .title-text {
+    font-size: 2.20rem;
+  }
+}
+
+/* Small desktop */
+@media (min-width: 768px) {
+  .title-text {
+    font-size: 3rem;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .title-text {
+    font-size: 4.5rem;
+  }
+}
+
+/* Large screens */
+@media (min-width: 1280px) {
+  .title-text {
+    font-size: 6rem;
+  }
+}
+
+.title-text:hover {
+  color: #000000;
+}
+
+.circuit-wrapper {
+  min-height: 100%;
+  width: 100%;
+  
+  background-color: white;
+}
+
+.circuit-background {
+  
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 19px,
+      rgba(75, 85, 99, 0.08) 19px,
+      rgba(75, 85, 99, 0.08) 20px,
+      transparent 20px,
+      transparent 39px,
+      rgba(75, 85, 99, 0.08) 39px,
+      rgba(75, 85, 99, 0.08) 40px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 19px,
+      rgba(75, 85, 99, 0.08) 19px,
+      rgba(75, 85, 99, 0.08) 20px,
+      transparent 20px,
+      transparent 39px,
+      rgba(75, 85, 99, 0.08) 39px,
+      rgba(75, 85, 99, 0.08) 40px
+    ),
+    radial-gradient(
+      circle at 20px 20px,
+      rgba(55, 65, 81, 0.12) 2px,
+      transparent 2px
+    ),
+    radial-gradient(
+      circle at 40px 40px,
+      rgba(55, 65, 81, 0.12) 2px,
+      transparent 2px
+    );
+  background-size:
+    40px 40px,
+    40px 40px,
+    40px 40px,
+    40px 40px;
 }

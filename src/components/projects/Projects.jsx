@@ -56,7 +56,7 @@ const projects = [
   
 export default function Projects() {
   return (
-    <div className="projects-container">
+    <div className="projects-container" id="projects">
       <h1 className="projects-title">My Work</h1>
       <p className="projects-subtitle">
         A collection of my best projects that showcase my passion for building modern web experiences.

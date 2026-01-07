@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import resume from '../../assets/joelresume.pdf';
 import joelPhoto from '../../assets/linkedinprofile.jpg';
@@ -19,8 +20,25 @@ export default function Home() {
       },
     }
   };
+
+   const text = "JOEL";
+  const speed = 250;
+
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    if (index < text.length) {
+      const timeout = setTimeout(() => {
+        setIndex(index + 1);
+      }, speed);
+
+      return () => clearTimeout(timeout);
+    }
+  }, [index, text]);
   return (
-    <div className="home-container">
+
+    <>
+    <div className="home-container" id="about">
       {/* Background Video or Image */}
 
       <div className="overlay" />
@@ -33,7 +51,8 @@ export default function Home() {
         >
           <motion.h1
           variants={reveal}
-          className="home-title">Hi, I'm <span className="accent">JOEL. A</span></motion.h1>
+          className="home-title">Hi, I'm <span className="typewriter accent">{text.slice(0, index)}</span>
+      <span className="cursor accent">|</span></motion.h1>
         <motion.h1 variants={reveal} className="about-title">About Me</motion.h1>
         <motion.p variants={reveal} className="about-text">
           A passionate <strong>Full Stack Developer</strong> focused on creating elegant, efficient, and user-friendly applications.
@@ -70,5 +89,7 @@ export default function Home() {
           src={joelPhoto} alt="My Profile" />
       </div>
     </div>
+    </>
+    
   );
 }

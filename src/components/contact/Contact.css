@@ -4,7 +4,7 @@
   justify-content: center;
 }
 .contact-container {
-  padding: 4rem 2rem;
+  padding: 4rem 2rem 0 2rem;
   text-align: center;
   display: flex;
   align-items: center;
@@ -266,4 +266,8 @@
 @keyframes fadeInDown {
   from { opacity: 0; transform: translateY(-30px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+.title-circuit {
+  padding: 0 1rem 0 1rem;
 }

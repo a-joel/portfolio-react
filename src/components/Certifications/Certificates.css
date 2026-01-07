@@ -126,3 +126,9 @@
 .cert-link:hover {
   color: #3730a3;
 }
+
+@media (max-width: 428px) {
+  .cert-title {
+    font-size: 1.5rem;
+  }
+}
