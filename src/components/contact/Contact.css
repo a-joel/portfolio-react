@@ -12,8 +12,8 @@
 }
 
 .vertical-line {
-  border-left: 2px solid black;
-  height: 100px;
+  border-left: 2px solid rgb(233, 230, 230);
+  height: 520px;
   margin: 0 20px;
 }
 
@@ -61,22 +61,7 @@
   box-shadow: 0 0 5px rgba(229, 9, 20, 0.5);
 }
 
-/* Socials */
-.contact-socials {
-  display: flex;
-  gap: 1.5rem;
-  justify-content: center;
-  margin-top: 2rem;
-  animation: fadeInUp 1s ease forwards;
-}
-.contact-socials a {
-  color: var(--text);
-  transition: transform 0.3s, color 0.3s;
-}
-.contact-socials a:hover {
-  transform: scale(1.2);
-  color: #e50914;
-}
+
 
 
 .submit-btn{

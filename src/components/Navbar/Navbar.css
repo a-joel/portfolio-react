@@ -1,3 +1,25 @@
+.logo-container {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 11;
+  margin: 10px 0;
+
+    transition:
+    box-shadow 0.3s ease,
+    background 0.3s ease,
+    transform 0.3s ease;
+
+  animation: fadeInDown 0.9s ease forwards;
+}
+
+.logo-section img {
+  width: 50px;
+  height: 50px;
+  border-radius: 20%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
 .nav-container {
   position: fixed;
   top: 0;
@@ -39,6 +61,8 @@
     transform 0.3s ease;
 
   animation: fadeInDown 0.9s ease forwards;
+
+  color: black;
 }
 
 .nav-container:hover {
@@ -61,6 +85,21 @@
   pointer-events: none;
 }
 
+.whatsapp-logo-section {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 11;
+}
+
+.whatsapp-logo img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+}
+
 
 .nav-items {
   display: flex;
@@ -76,8 +115,8 @@
   transform: translateY(-5px);
 }
 
-.home::after {
-  content: "HOME";
+.skills::after {
+  content: "SKILLS";
   font-size: 10px;
   position: absolute;
   top: 100%;
@@ -91,7 +130,7 @@
   transition:  opacity 0.3s ease-in-out;
 }
 
-.home:hover::after{
+.skills:hover::after{
   visibility: visible;
   opacity: 1;
 }
@@ -163,9 +202,14 @@
 @media (max-width: 428px) {
   .nav-container {
     width: 290px;
+    margin-right: 10px;
   }
 
   .nav-items {
     gap: 50px;
+  }
+
+  .logo-container {
+    margin-left: 5px;
   }
 }

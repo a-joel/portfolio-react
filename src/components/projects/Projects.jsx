@@ -3,11 +3,11 @@ import eliteShopping from "../../assets/elite-shopping.png";
 import netflixClone from "../../assets/netflix.png";
 import eliteDashboard from "../../assets/elite-dashboard.png";
 import hospitalManagement from "../../assets/heal-zone-linkedin-preview.png";
-import landingPage from '../../assets/landing-page-internships.png'
-import todoList from '../../assets/to-do-list.png'
-import flightDeck from '../../assets/flight-deck-360.png'
-import {Link} from 'react-router-dom'
-import {motion} from 'framer-motion';
+import landingPage from "../../assets/landing-page-internships.png";
+import todoList from "../../assets/to-do-list.png";
+import flightDeck from "../../assets/flight-deck-360.png";
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const projects = [
   {
@@ -42,18 +42,32 @@ const projects = [
   },
   {
     title: "To Do List Application",
-    desc: "Developed a to do list for getting things done without forgotting it.",
+    desc: "Developed a to do list for getting things done without forgetting it.",
     image: todoList,
     link: "https://creative-rugelach-840757.netlify.app/",
   },
   {
     title: "Flight Ticket Application",
-    desc: "This application allows users to easily navigate between pages and book their desired flight ticket, cancel anytime.",
+    desc: "Navigate and book flights, cancel anytime.",
     image: flightDeck,
     link: "https://ephemeral-crepe-ff3a11.netlify.app/home",
   },
 ];
-  
+
+const container = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+};
+
+const item = {
+  hidden: { opacity: 0, y: 30 },
+  show: { opacity: 1, y: 0 },
+};
+
 export default function Projects() {
   return (
     <div className="projects-container" id="projects">
@@ -62,14 +76,23 @@ export default function Projects() {
         A collection of my best projects that showcase my passion for building modern web experiences.
       </p>
 
-      <div className="projects-grid">
+      {/* 🔥 STAGGER CONTAINER */}
+      <motion.div
+        className="projects-grid"
+        variants={container}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.2 }}
+      >
         {projects.map((proj, index) => (
-          <a
+          <motion.a
             key={index}
             href={proj.link}
             target="_blank"
             rel="noopener noreferrer"
             className="project-card"
+            variants={item}
+            whileHover={{ scale: 1.04 }}
           >
             <div className="project-image">
               <img src={proj.image} alt={proj.title} />
@@ -78,22 +101,24 @@ export default function Projects() {
                 <p>{proj.desc}</p>
               </div>
             </div>
-          </a>
+          </motion.a>
         ))}
-      </div>
+      </motion.div>
+
+      {/* Home button stays clean */}
       <Link to="/">
-  <motion.button
-    initial={{ opacity: 0, y: 30 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.8, ease: "easeOut" }}
-    viewport={{ once: true, amount: 0.3 }}
-    whileHover={{ scale: 1.05 }}
-    whileTap={{ scale: 0.95 }}
-    className="view-project-btn"
-  >
-    Home
-  </motion.button>
-</Link>
+        <motion.button
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true, amount: 0.3 }}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          className="view-project-btn"
+        >
+          Home
+        </motion.button>
+      </Link>
     </div>
   );
 }
