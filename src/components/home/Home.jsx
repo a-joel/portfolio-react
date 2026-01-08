@@ -55,7 +55,7 @@ export default function Home() {
       <span className="cursor accent">|</span></motion.h1>
         <motion.h1 variants={reveal} className="about-title">About Me</motion.h1>
         <motion.p variants={reveal} className="about-text">
-          A passionate <strong>Full Stack Developer</strong> focused on creating elegant, efficient, and user-friendly applications.
+          A passionate <strong className="domain">Full Stack Developer</strong> focused on creating elegant, efficient, and user-friendly applications.
           <br /><br />
           I specialize in JavaScript (React, Node.js), REST APIs, and cloud deployment.
           When I'm not coding, I love exploring design trends, contributing to

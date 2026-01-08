@@ -19,8 +19,40 @@ html {
 
 ::-webkit-scrollbar-thumb{
   width: 2px;
+  background: #000;
 }
 
 .joel-name {
   color: red;
+}
+
+::selection {
+  background-color: black;
+  color: white;
+}
+
+/* Webkit-based browsers (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+  width: 12px; /* Vertical scrollbar width */
+  height: 12px; /* Horizontal scrollbar height */
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Track background */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4b5563; /* 👈 THUMB COLOR — change this! */
+  border-radius: 0px;
+  border: 3px solid #f1f1f1; /* Creates inset effect (optional) */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #374151; /* Darker on hover */
+}
+
+/* Firefox */
+html {
+  scrollbar-color: #4b5563 #f1f1f1; /* thumb | track */
+  scrollbar-width: thin; /* or 'auto', 'thin' */
 }
